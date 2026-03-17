@@ -18,3 +18,15 @@ spec:
         image: redis:7
         ports:
         - containerPort: 6379
+        volumeMounts:
+        - name: redis-data
+          mountPath: /data
+
+  volumeClaimTemplates:
+  - metadata:
+      name: redis-data
+    spec:
+      accessModes: ["ReadWriteOnce"]
+      resources:
+        requests:
+          storage: 1Gi
