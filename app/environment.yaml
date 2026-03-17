@@ -1,0 +1,11 @@
+name: redis-k8s
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11.15
+  - pip
+  - pip:
+    - fastapi[standard]==0.135.1
+    - uvicorn==0.42.0
+    - redis==7.3.0
